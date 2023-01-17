@@ -1,0 +1,11 @@
+numpy>=1.17.1
+pydicom>=1.2.2
+opencv-python>=4.1.1.26
+torch 
+torchvision 
+torchaudio 
+--extra-index-url https://download.pytorch.org/whl/cu113
+imageio>=2.5.0
+Pillow==6.2.1
+pyyaml==5.4.1
+scipy

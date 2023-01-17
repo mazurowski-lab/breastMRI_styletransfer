@@ -1,0 +1,18 @@
+Training:
+python3 train.py --config configs/breastmri_folder.yaml
+
+
+Testing/Experiments:
+Example: Generate style codes of target style with transform:
+python3 style_code.py --config configs/breastmri_folder.yaml --output_folder . --checkpoint saved_models/gen_00011000_trainon_gammalogPWlin.pt --iterations 11000 --dataset test --transform func_exp
+
+use style codes to perform style transfer:
+python3 test.py --config configs/breastmri_folder.yaml --csv_file style_codes_test_11000_func_exp.csv --output_folder inference_results --checkpoint saved_models/gen_00011000_trainon_gammalogPWlin.pt --iterations 11000 --trans_func func_exp --paper_experiment True --most_rep_style_num_data 1 --save_transferred_imgs
+
+
+Example: GE-> Siemens style transfer
+Generate style codes of target style with transform: (Siemens, identity transform)
+python3 style_code.py --config configs/breastmri_folder_GEtoSiemens.yaml --output_folder . --checkpoint saved_models/gen_00013500_trainon_negPWlinSobelIdent.pt --iterations 13500 --dataset test --transform func_identity
+
+use style codes to perform style transfer of GE -> Siemens (note: X_transformed aren't relevant, only transferring GE to Siemens style)
+python3 test.py --config configs/breastmri_folder.yaml --csv_file style_codes_test_13500_func_identity.csv --output_folder inference_results --checkpoint saved_models/gen_00013500_trainon_negPWlinSobelIdent.pt --iterations 13500 --trans_func func_identity --paper_experiment True --most_rep_style_num_data 1 --save_transferred_imgs
