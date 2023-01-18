@@ -29,7 +29,7 @@ If you use this code, please cite our paper:
 - `compare_stylecodes.py`: script for comparing style codes of images, used for experiments in the supplementary material
 - `validation.py`: script with validation utilities
 - `trainer.py`: script with training utilities
-- `networks.py`: sript with model building utilities
+- `networks.py`: script with model building utilities
 - `data.py`: script for loading data
 - `transforms.py`: script with image transformations used by model
 - `utils.py`: script with miscellaneous utilities
